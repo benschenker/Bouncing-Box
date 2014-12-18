@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+    <head>
+        <title>
+            Bouncing Box
+        </title>
+        <style>
+            .box { /*anything with class=box*/
+                /*What the box looks like*/
+                background-color: teal;
+                border: 1px solid gray;
+                display: block;
+                width: 50px;
+                height: 50px;
+                font-size: 200%;
+                color: white;
+                text-align: center;
+                
+                /*position the box*/
+                position: absolute;
+                top: 100px;
+                left: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <div class="box">0</div>
+        </main>
+    </body>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script>
+        (function(){ /* it is good practice for everything to be in functions */
+            var update;
+            update = function() {
+                console.log(Math.random()); /* print a random number */
+            }
+            setInterval(update, 1000); /* every 1 sec, run update method */
+        })()  /* <------------ note this */
+    </script>
+</html>
