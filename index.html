@@ -32,10 +32,11 @@
     <script>
         (function(){ /* it is good practice for everything to be in functions */
             /* declare variables you will use */
-            var update, position, fullWidth;
+            var update, position, fullWidth, points, increasePoints;
             
             /* initialize variables */
             position = 0;
+            points = 0;
             fullWidth = $('main').width();
             
             update = function() {
@@ -44,10 +45,16 @@
                     position = 0;
                 }
                 $('.box').css('left', position);
+                $('.box').text(points); /* set the text inside <div class=box> */
+            }
+            
+            increasePoints = function() {
+                points = points + 1;
             }
             
             /* start the code running */
             setInterval(update, 100); /* every 1 sec, run update method */
+            $('.box').on('click', increasePoints)
         })()  
     </script>
 </html>
