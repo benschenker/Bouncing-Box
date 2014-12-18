@@ -32,15 +32,16 @@
     <script>
         (function(){ /* it is good practice for everything to be in functions */
             /* declare variables you will use */
-            var update, position, fullWidth, points, increasePoints;
+            var update, position, fullWidth, points, increasePoints, speed;
             
             /* initialize variables */
             position = 0;
-            points = 0;
+            points = 0
+            speed = 10;
             fullWidth = $('main').width();
             
             update = function() {
-                position = position + 10;
+                position = position + speed;
                 if(position > fullWidth) {
                     position = 0;
                 }
@@ -50,6 +51,7 @@
             
             increasePoints = function() {
                 points = points + 1;
+                speed = speed + 5;
             }
             
             /* start the code running */
