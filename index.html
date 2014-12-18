@@ -32,18 +32,22 @@
     <script>
         (function(){ /* it is good practice for everything to be in functions */
             /* declare variables you will use */
-            var update, position, fullWidth, points, increasePoints, speed;
+            var update, position, fullWidth, points, increasePoints, speed, direction;
             
             /* initialize variables */
             position = 0;
             points = 0
             speed = 10;
+            direction = 1;
             fullWidth = $('main').width();
             
             update = function() {
-                position = position + speed;
-                if(position > fullWidth) {
-                    position = 0;
+                position = position + speed * direction;
+                if ( position > fullWidth ) {
+                    direction = direction * -1;
+                }
+                if (position < 0 ) {
+                    direction = direction * -1;
                 }
                 $('.box').css('left', position);
                 $('.box').text(points); /* set the text inside <div class=box> */
