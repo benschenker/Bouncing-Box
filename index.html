@@ -32,17 +32,22 @@
     <script>
         (function(){ /* it is good practice for everything to be in functions */
             /* declare variables you will use */
-            var update, position;
+            var update, position, fullWidth;
             
             /* initialize variables */
             position = 0;
+            fullWidth = $('main').width();
+            
             update = function() {
                 position = position + 10;
+                if(position > fullWidth) {
+                    position = 0;
+                }
                 $('.box').css('left', position);
             }
             
             /* start the code running */
-            setInterval(update, 1000); /* every 1 sec, run update method */
+            setInterval(update, 100); /* every 1 sec, run update method */
         })()  
     </script>
 </html>
