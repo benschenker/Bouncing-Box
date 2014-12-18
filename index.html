@@ -31,11 +31,18 @@
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script>
         (function(){ /* it is good practice for everything to be in functions */
-            var update;
+            /* declare variables you will use */
+            var update, position;
+            
+            /* initialize variables */
+            position = 0;
             update = function() {
-                console.log(Math.random()); /* print a random number */
+                position = position + 10;
+                $('.box').css('left', position);
             }
+            
+            /* start the code running */
             setInterval(update, 1000); /* every 1 sec, run update method */
-        })()  /* <------------ note this */
+        })()  
     </script>
 </html>
